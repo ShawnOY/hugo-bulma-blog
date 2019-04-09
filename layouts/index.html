@@ -2,18 +2,14 @@
 
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
 
-<main class="column is-9">
-  <div class="content">
-    {{ range $paginator.Pages }}
-      <article class="media">
-        <div class="media-content">
-          <h2><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h2>
-          <p>{{ .Summary }}</p>
-          <p>{{ .Date.Format "January 2, 2006" }}</p>
-        </div>
-      </article>
-    {{ end }}
-  </div>
-</main>
+{{ range $paginator.Pages }}
+  <article class="media">
+    <div class="media-content">
+      <h2><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h2>
+      <p>{{ .Summary }}</p>
+      <p>{{ .Date.Format "January 2, 2006" }}</p>
+    </div>
+  </article>
+{{ end }}
 
 {{ end }}
