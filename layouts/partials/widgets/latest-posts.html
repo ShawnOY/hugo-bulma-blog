@@ -3,10 +3,8 @@
     <p class="card-header-title">Latest Posts</p>
   </header>
   <div class="card-content">
-    <p>Posts</p>
-    <p>Posts</p>
-    <p>Posts</p>
-    <p>Posts</p>
-    <p>Posts</p>
+    {{ range first 5 (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ end }}
   </div>
 </div>
