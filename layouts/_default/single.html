@@ -1,3 +1,11 @@
 {{ define "main" }}
-Test
+<article class="media">
+  <div class="media-content">
+    <h1 class="title">{{ .Title }}</h1>
+    <div class="content is-small"><i class="far fa-calendar-alt"></i> {{ .Date.Format "January 2, 2006" }} <i class="fas fa-book-open"></i> {{ .ReadingTime }} Min</div>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
 {{ end }}
