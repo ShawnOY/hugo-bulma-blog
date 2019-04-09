@@ -3,7 +3,7 @@
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
 
 <div class="columns">
-  <div class="column is-9">
+  <main class="column is-9">
     <div class="content">
       {{ range $paginator.Pages }}
         <article class="media">
@@ -15,9 +15,46 @@
         </article>
       {{ end }}
     </div>
-  </div>
-  <div class="column is-3">
-  </div>
+  </main>
+  <aside class="column is-3">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">Latest Posts</p>
+      </header>
+      <div class="card-content">
+        <p>Posts</p>
+        <p>Posts</p>
+        <p>Posts</p>
+        <p>Posts</p>
+        <p>Posts</p>
+      </div>
+    </div>
+    <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Categories</p>
+        </header>
+        <div class="card-content">
+          <p>Category 1</p>
+          <p>Category 2</p>
+          <p>Category 3</p>
+          <p>Category 4</p>
+          <p>Category 5</p>
+        </div>
+      </div>
+    <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Tags</p>
+        </header>
+        <div class="card-content">
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+        </div>
+      </div>
+  </aside>
 </div>
 
 {{ end }}
