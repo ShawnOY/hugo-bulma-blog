@@ -5,7 +5,7 @@
 {{ range $paginator.Pages }}
   <article class="media">
     <div class="media-content">
-      <h2 class="title"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h2>
+      <h2 class="title is-3"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h2>
       <div class="content is-small"><i class="far fa-calendar-alt"></i> {{ .Date.Format "January 2, 2006" }} <i class="fas fa-book-open"></i> {{ .ReadingTime }} Min</div>
       <div class="content">
         {{ .Summary }}
