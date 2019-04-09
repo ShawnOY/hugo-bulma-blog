@@ -3,11 +3,10 @@
     <p class="card-header-title">Tags</p>
   </header>
   <div class="card-content">
-    <span class="tag">Tag</span>
-    <span class="tag">Tag</span>
-    <span class="tag">Tag</span>
-    <span class="tag">Tag</span>
-    <span class="tag">Tag</span>
-    <span class="tag">Tag</span>
+    <div class="tags">
+      {{- range $key, $val := .Site.Taxonomies.tags.ByCount -}}
+        <span class="tag">{{ $val.Name}}</span> 
+      {{- end -}}
+    </div>
   </div>
 </div>
