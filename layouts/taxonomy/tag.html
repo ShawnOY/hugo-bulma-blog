@@ -1,5 +1,33 @@
 {{ define "main" }}
 
+<nav class="breadcrumb is-small" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <a href="{{ "/" | absURL }}">
+        <span class="icon is-small">
+          <i class="fas fa-home" aria-hidden="true"></i>
+        </span>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ "tags" | absURL }}">
+        <span class="icon is-small">
+          <i class="fas fa-tags" aria-hidden="true"></i>
+        </span>
+        <span>Tag</span>
+      </a>
+    </li>
+    <li class="is-active">
+      <a href="#"></a>
+        <span class="icon is-small">
+          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+        </span>
+        <span>{{ .Title }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 <div class="content">
   {{ range .Pages }}
     <article class="media">
