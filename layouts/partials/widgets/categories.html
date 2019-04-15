@@ -1,12 +1,12 @@
 <div class="card">
-    <header class="card-header">
-      <p class="card-header-title">Categories</p>
-    </header>
-    <div class="card-content">
-      <ul>
-      {{- range $key, $val := .Site.Taxonomies.categories.ByCount -}}
-        <li>{{ $val.Name}}</li>
-      {{- end -}}
-      </ul>
-    </div>
+  <header class="card-header">
+    <p class="card-header-title">Categories</p>
+  </header>
+  <div class="card-content">
+    <ul>
+      {{ range .Site.Taxonomies.categories.ByCount }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+      {{ end }}
+    </ul>
   </div>
+</div>
