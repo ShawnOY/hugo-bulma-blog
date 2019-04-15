@@ -4,9 +4,9 @@
   </header>
   <div class="card-content">
     <div class="tags">
-      {{- range $key, $val := .Site.Taxonomies.tags.ByCount -}}
-        <span class="tag">{{ $val.Name}}</span> 
-      {{- end -}}
+      {{ range .Site.Taxonomies.tags }}
+        <span class="tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>({{ .Count }})</span>
+      {{ end }}
     </div>
   </div>
 </div>
