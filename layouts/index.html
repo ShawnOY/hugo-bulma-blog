@@ -2,6 +2,7 @@
 
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
 
+<div class="content">
 {{ range $paginator.Pages }}
   <article class="media">
     <div class="media-content">
@@ -14,5 +15,13 @@
     </div>
   </article>
 {{ end }}
+</div>
+
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+  {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
+  {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Next</a>{{ end }}
+  <ul class="pagination-list">
+  </ul>
+</nav>
 
 {{ end }}
