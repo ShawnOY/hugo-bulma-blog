@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts").ByPublishDate.Reverse }}
 
 <nav class="breadcrumb is-small" aria-label="breadcrumbs">
   <ul>
